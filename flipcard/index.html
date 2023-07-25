@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    place-items: center;
+    background: rgb(205, 197, 197);
+}
+
+.wrapper {
+    height: 400px;
+    width: 320px;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.wrapper .card {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    background: #fff;
+    border-radius: 10px;
+    transform: translateY(0deg);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.wrapper:hover>.front-face {
+    transform: rotateY(-180deg);
+}
+
+.front-face .title {
+    font-size: 25px;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.wrapper .card img {
+    height: 70%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.wrapper .back-face {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transform: rotateY(180deg);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+}
+
+.wrapper:hover>.back-face {
+    transform: rotateY(0deg);
+}
+
+.wrapper .back-face img {
+    margin-top: 3px;
+    height: 120px;
+    width: 120px;
+    padding: 5px;
+    border-radius: 5%;
+    background: linear-gradient(375deg, #1cc7d0, #2ede98);
+}
+
+.wrapper .back-face .info {
+    padding: 15px;
+}
+
+.back-face .info .title {
+    font-size: 25px;
+    font-weight: 300;
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="card front-face">
+            <img src="uinc.jpg">
+            <div class="title">UNIC for India Bhutan</div>
+        </div>
+        <div class="card back-face">
+            <img src="uinc.jpg">
+            <div class="info">
+                <div class="title">UNIC for India Bhutan</div>
+                <hr width="65%">
+                <p> The United Nations Information Centre for India and Bhutan 
+                    is based in New Delhi, India. It is one of 63 United Nations 
+                    Information Centres located worldwide. These centres work globally
+                     under the direction of the Department of Public Information of the
+                      United Nations Secretariat.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
